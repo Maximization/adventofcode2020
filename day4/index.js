@@ -64,11 +64,10 @@ const vaildPassportsPartTwo = passports.filter((passport) => {
     return false;
   }
 
-  if (passportObject.pid.length !== 9) {
+  if (passportObject.pid.length !== 9 || /[^0-9]/.test(passportObject.pid)) {
     return false;
   }
-  console.log(passportObject);
+
   return true;
 });
-
 console.log('Answer part 2:', vaildPassportsPartTwo.length);
