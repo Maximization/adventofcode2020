@@ -14,18 +14,19 @@ const instructions = input.split('\n')
       bitmask = value;
     } else {
       const memoryAddress = Number(variable.slice(4, -1));
-      const valueBinary = Number(value).toString(2).padStart(36, '0');
-      const valueBinaryMasked = bitmask.split('')
-        .map((bit, index) => bit === 'X' ? valueBinary[index] : bit)
-        .join('');
-      const valueMasked = parseInt(valueBinaryMasked, 2);
-      memory[memoryAddress] = valueMasked;
 
-      // This doesn't work for some reason
-      // const maskedValue = BigInt(Number(value))
-      //   | BigInt(parseInt(bitmask.replaceAll('X', '0'), 2))
-      //   & BigInt(parseInt(bitmask.replaceAll('X', '1'), 2));
-      // memory[memoryAddress] = Number(maskedValue);
+      // Bitwise operator solution
+      const valueMasked = (BigInt(Number(value)) | BigInt(parseInt(bitmask.replaceAll('X', '0'), 2)))
+        & BigInt(parseInt(bitmask.replaceAll('X', '1'), 2));
+      memory[memoryAddress] = Number(valueMasked);
+
+      // Binary string manipulation solution
+      // const valueBinary = Number(value).toString(2).padStart(36, '0');
+      // const valueBinaryMasked = bitmask.split('')
+      //   .map((bit, index) => bit === 'X' ? valueBinary[index] : bit)
+      //   .join('');
+      // const valueMasked = parseInt(valueBinaryMasked, 2);
+      // memory[memoryAddress] = valueMasked;
     }
   }
 
