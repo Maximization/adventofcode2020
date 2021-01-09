@@ -1,7 +1,4 @@
 # Advent of Code 2020
-These are my JavaScript solutions to the [Advent of Code 2020](https://adventofcode.com/) event
+These are my JavaScript solutions to [Advent of Code 2020](https://adventofcode.com/).
 
-#### 🎥 Live on Twitch!
-Tune in from Monday to Friday at 10 AM (CET) starting December 1st, and let's solve these puzzles together! It's going to be challenging and a lot of fun 🥳
-
-See you on Twitch! 👉🏼 [https://www.twitch.tv/maximization_](https://www.twitch.tv/maximization_)
+You can watch live recordings of me solving the challenges while thinking out loud, on this [YouTube playlist 🎬](https://www.youtube.com/playlist?list=PLcwI3rn2RsQJpgIP1fo6owuWawXkELfr0).
